@@ -28,7 +28,6 @@ public class SayhiClusterReconciler implements Reconciler<SayhiCluster> {
 
   @Override
   public UpdateControl<SayhiCluster> reconcile(SayhiCluster resource, Context context) {
-    // TODO: fill in logic
     // 先读取出CR定义的元数据，现在只有两个分别是副本数和Docker镜像
     var size = resource.getSpec().getSize();
     image = resource.getSpec().getImage();
@@ -60,7 +59,11 @@ public class SayhiClusterReconciler implements Reconciler<SayhiCluster> {
     } catch (Exception e) {
       LOGGER.error("", e);
     }
-    return UpdateControl.noUpdate();
+
+    // 修改状态
+    resource.setStatus(new SayhiClusterStatus(SayhiClusterStatus.State.PROCESSED));
+    LOGGER.info("update RC status to {}", resource.getStatus().getState());
+    return UpdateControl.updateStatus(resource);
   }
 
   /**
