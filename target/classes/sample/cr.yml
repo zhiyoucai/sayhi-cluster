@@ -1,7 +1,0 @@
-apiVersion: sayhi.vastdata.com/v1alpha1
-kind: SayhiCluster
-metadata:
-  name: demo
-spec:
-  size: 1
-  image: youcai/sayhi:1.0.0

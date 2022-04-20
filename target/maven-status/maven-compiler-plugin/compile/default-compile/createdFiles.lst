@@ -1,6 +1,0 @@
-com\vastdata\SayhiCluster.class
-com\vastdata\constants\ImagePullPolicyEnum.class
-com\vastdata\SayhiClusterSpec.class
-com\vastdata\constants\ResourceTypeEnum.class
-com\vastdata\SayhiClusterStatus.class
-com\vastdata\SayhiClusterReconciler.class
