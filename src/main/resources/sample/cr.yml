@@ -3,5 +3,5 @@ kind: SayhiCluster
 metadata:
   name: demo
 spec:
-  size: 1
+  size: 2
   image: youcai/sayhi:1.0.0
